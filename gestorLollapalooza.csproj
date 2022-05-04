@@ -1,0 +1,435 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1CF810EF-241A-490D-BC07-79C9E1223998}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>gestorLollapalooza</RootNamespace>
+    <AssemblyName>gestorLollapalooza</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="bussinesLayer\Actuacion.cs" />
+    <Compile Include="bussinesLayer\CentroVenta.cs" />
+    <Compile Include="bussinesLayer\DiaFestival.cs" />
+    <Compile Include="bussinesLayer\Festival.cs" />
+    <Compile Include="bussinesLayer\GrupoMusical.cs" />
+    <Compile Include="bussinesLayer\Perfil.cs" />
+    <Compile Include="bussinesLayer\PuntoVenta.cs" />
+    <Compile Include="bussinesLayer\TipoEntrada.cs" />
+    <Compile Include="bussinesLayer\Usuario.cs" />
+    <Compile Include="dataAccessLayer\ActuacionDao.cs" />
+    <Compile Include="dataAccessLayer\BDConexion.cs" />
+    <Compile Include="dataAccessLayer\CentroVentaDao.cs" />
+    <Compile Include="dataAccessLayer\DiaFestivalDao.cs" />
+    <Compile Include="dataAccessLayer\FestivalDao.cs" />
+    <Compile Include="dataAccessLayer\GrupoMusicalDao.cs" />
+    <Compile Include="dataAccessLayer\PerfilDao.cs" />
+    <Compile Include="dataAccessLayer\PuntoVentaDao.cs" />
+    <Compile Include="dataAccessLayer\TipoEntradaDao.cs" />
+    <Compile Include="dataAccessLayer\UsuarioDao.cs" />
+    <Compile Include="presLayer\BotonFacha.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="presLayer\CentroVentaPres\frmAltaCentroVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presLayer\CentroVentaPres\frmAltaCentroVenta.Designer.cs">
+      <DependentUpon>frmAltaCentroVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="presLayer\CentroVentaPres\frmBajaCentroVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presLayer\CentroVentaPres\frmBajaCentroVenta.Designer.cs">
+      <DependentUpon>frmBajaCentroVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="presLayer\CentroVentaPres\frmGestionarCentroVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presLayer\CentroVentaPres\frmGestionarCentroVenta.Designer.cs">
+      <DependentUpon>frmGestionarCentroVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="presLayer\CentroVentaPres\frmModificacionCentroVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presLayer\CentroVentaPres\frmModificacionCentroVenta.Designer.cs">
+      <DependentUpon>frmModificacionCentroVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="presLayer\DiaFestivalPres\frmDiaFestival.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presLayer\DiaFestivalPres\frmDiaFestival.Designer.cs">
+      <DependentUpon>frmDiaFestival.cs</DependentUpon>
+    </Compile>
+    <Compile Include="presLayer\FestivalPres\frmDiagramarFestival.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presLayer\FestivalPres\frmDiagramarFestival.Designer.cs">
+      <DependentUpon>frmDiagramarFestival.cs</DependentUpon>
+    </Compile>
+    <Compile Include="presLayer\GrupoMusicalPres\frmAltaGrupoMusical.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presLayer\GrupoMusicalPres\frmAltaGrupoMusical.Designer.cs">
+      <DependentUpon>frmAltaGrupoMusical.cs</DependentUpon>
+    </Compile>
+    <Compile Include="presLayer\GrupoMusicalPres\frmBajaGrupoMusical.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presLayer\GrupoMusicalPres\frmBajaGrupoMusical.Designer.cs">
+      <DependentUpon>frmBajaGrupoMusical.cs</DependentUpon>
+    </Compile>
+    <Compile Include="presLayer\GrupoMusicalPres\frmConsultaGrupoMusical.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presLayer\GrupoMusicalPres\frmConsultaGrupoMusical.Designer.cs">
+      <DependentUpon>frmConsultaGrupoMusical.cs</DependentUpon>
+    </Compile>
+    <Compile Include="presLayer\GrupoMusicalPres\frmModificacionGrupoMusical.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presLayer\GrupoMusicalPres\frmModificacionGrupoMusical.Designer.cs">
+      <DependentUpon>frmModificacionGrupoMusical.cs</DependentUpon>
+    </Compile>
+    <Compile Include="presLayer\PuntoVentaPres\frmBajaPuntoVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presLayer\PuntoVentaPres\frmBajaPuntoVenta.Designer.cs">
+      <DependentUpon>frmBajaPuntoVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="presLayer\PuntoVentaPres\frmGestionarPuntoVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presLayer\PuntoVentaPres\frmGestionarPuntoVenta.Designer.cs">
+      <DependentUpon>frmGestionarPuntoVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="presLayer\PuntoVentaPres\frmModificarPuntoVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presLayer\PuntoVentaPres\frmModificarPuntoVenta.Designer.cs">
+      <DependentUpon>frmModificarPuntoVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="presLayer\ReportPres\frmReporteCentroVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presLayer\ReportPres\frmReporteCentroVenta.Designer.cs">
+      <DependentUpon>frmReporteCentroVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="presLayer\ReportPres\frmReporteFestival.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presLayer\ReportPres\frmReporteFestival.Designer.cs">
+      <DependentUpon>frmReporteFestival.cs</DependentUpon>
+    </Compile>
+    <Compile Include="presLayer\ReportPres\frmReporteGM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presLayer\ReportPres\frmReporteGM.Designer.cs">
+      <DependentUpon>frmReporteGM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="presLayer\ReportPres\frmReporteUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presLayer\ReportPres\frmReporteUsuarios.Designer.cs">
+      <DependentUpon>frmReporteUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="presLayer\TipoEntradaPres\frmAltaTipoEntrada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presLayer\TipoEntradaPres\frmAltaTipoEntrada.Designer.cs">
+      <DependentUpon>frmAltaTipoEntrada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="presLayer\TipoEntradaPres\frmBajaTipoEntrada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presLayer\TipoEntradaPres\frmBajaTipoEntrada.Designer.cs">
+      <DependentUpon>frmBajaTipoEntrada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="presLayer\TipoEntradaPres\frmGestionarTipoEntrada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presLayer\TipoEntradaPres\frmGestionarTipoEntrada.Designer.cs">
+      <DependentUpon>frmGestionarTipoEntrada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="presLayer\TipoEntradaPres\frmModificacionTipoEntrada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presLayer\TipoEntradaPres\frmModificacionTipoEntrada.Designer.cs">
+      <DependentUpon>frmModificacionTipoEntrada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="presLayer\UsuarioPres\frmAltaUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presLayer\UsuarioPres\frmAltaUsuario.Designer.cs">
+      <DependentUpon>frmAltaUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="presLayer\LoginPres\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presLayer\LoginPres\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="presLayer\PrincipalPres\frmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presLayer\PrincipalPres\frmPrincipal.Designer.cs">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="presLayer\frmTextBoxFacha.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="presLayer\frmTextBoxFacha.Designer.cs">
+      <DependentUpon>frmTextBoxFacha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="presLayer\UsuarioPres\frmBajaUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presLayer\UsuarioPres\frmBajaUsuario.Designer.cs">
+      <DependentUpon>frmBajaUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="presLayer\UsuarioPres\frmGestionarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presLayer\UsuarioPres\frmGestionarUsuario.Designer.cs">
+      <DependentUpon>frmGestionarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="presLayer\UsuarioPres\frmModificacionUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presLayer\UsuarioPres\frmModificacionUsuario.Designer.cs">
+      <DependentUpon>frmModificacionUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportLayer\DataSetLollaPalooza.cs">
+      <DependentUpon>DataSetLollaPalooza.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReportLayer\DataSetLollaPalooza.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetLollaPalooza.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Service\ActuacionService.cs" />
+    <Compile Include="Service\CentroVentaService.cs" />
+    <Compile Include="Service\DiaFestivalService.cs" />
+    <Compile Include="Service\FestivalService.cs" />
+    <Compile Include="Service\GrupoMusicalService.cs" />
+    <Compile Include="Service\PerfilService.cs" />
+    <Compile Include="Service\PuntoVentaService.cs" />
+    <Compile Include="Service\TipoEntradaService.cs" />
+    <Compile Include="Service\UsuarioService.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl1.Designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="presLayer\CentroVentaPres\frmAltaCentroVenta.resx">
+      <DependentUpon>frmAltaCentroVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presLayer\CentroVentaPres\frmBajaCentroVenta.resx">
+      <DependentUpon>frmBajaCentroVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presLayer\CentroVentaPres\frmGestionarCentroVenta.resx">
+      <DependentUpon>frmGestionarCentroVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presLayer\CentroVentaPres\frmModificacionCentroVenta.resx">
+      <DependentUpon>frmModificacionCentroVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presLayer\DiaFestivalPres\frmDiaFestival.resx">
+      <DependentUpon>frmDiaFestival.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presLayer\FestivalPres\frmDiagramarFestival.resx">
+      <DependentUpon>frmDiagramarFestival.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presLayer\GrupoMusicalPres\frmAltaGrupoMusical.resx">
+      <DependentUpon>frmAltaGrupoMusical.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presLayer\GrupoMusicalPres\frmBajaGrupoMusical.resx">
+      <DependentUpon>frmBajaGrupoMusical.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presLayer\GrupoMusicalPres\frmConsultaGrupoMusical.resx">
+      <DependentUpon>frmConsultaGrupoMusical.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presLayer\GrupoMusicalPres\frmModificacionGrupoMusical.resx">
+      <DependentUpon>frmModificacionGrupoMusical.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presLayer\LoginPres\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presLayer\PrincipalPres\frmPrincipal.resx">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presLayer\frmTextBoxFacha.resx">
+      <DependentUpon>frmTextBoxFacha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presLayer\PuntoVentaPres\frmBajaPuntoVenta.resx">
+      <DependentUpon>frmBajaPuntoVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presLayer\PuntoVentaPres\frmGestionarPuntoVenta.resx">
+      <DependentUpon>frmGestionarPuntoVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presLayer\PuntoVentaPres\frmModificarPuntoVenta.resx">
+      <DependentUpon>frmModificarPuntoVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presLayer\ReportPres\frmReporteCentroVenta.resx">
+      <DependentUpon>frmReporteCentroVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presLayer\ReportPres\frmReporteFestival.resx">
+      <DependentUpon>frmReporteFestival.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presLayer\ReportPres\frmReporteGM.resx">
+      <DependentUpon>frmReporteGM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presLayer\ReportPres\frmReporteUsuarios.resx">
+      <DependentUpon>frmReporteUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presLayer\TipoEntradaPres\frmAltaTipoEntrada.resx">
+      <DependentUpon>frmAltaTipoEntrada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presLayer\TipoEntradaPres\frmBajaTipoEntrada.resx">
+      <DependentUpon>frmBajaTipoEntrada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presLayer\TipoEntradaPres\frmGestionarTipoEntrada.resx">
+      <DependentUpon>frmGestionarTipoEntrada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presLayer\TipoEntradaPres\frmModificacionTipoEntrada.resx">
+      <DependentUpon>frmModificacionTipoEntrada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presLayer\UsuarioPres\frmAltaUsuario.resx">
+      <DependentUpon>frmAltaUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presLayer\UsuarioPres\frmBajaUsuario.resx">
+      <DependentUpon>frmBajaUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presLayer\UsuarioPres\frmGestionarUsuario.resx">
+      <DependentUpon>frmGestionarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presLayer\UsuarioPres\frmModificacionUsuario.resx">
+      <DependentUpon>frmModificacionUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportLayer\ReportCentroVenta.rdlc" />
+    <EmbeddedResource Include="ReportLayer\ReportFestival.rdlc" />
+    <EmbeddedResource Include="ReportLayer\ReportGruposMusicales.rdlc" />
+    <EmbeddedResource Include="ReportLayer\ReportUsuarios.rdlc" />
+    <EmbeddedResource Include="UserControl1.resx">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Documentos\Formulario_presentacion_proyecto_PAVI_2020.pdf" />
+    <None Include="Documentos\Manual de usuario.pdf" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReportLayer\DataSetLollaPalooza.xsc">
+      <DependentUpon>DataSetLollaPalooza.xsd</DependentUpon>
+    </None>
+    <None Include="ReportLayer\DataSetLollaPalooza.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetLollaPalooza.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ReportLayer\DataSetLollaPalooza.xss">
+      <DependentUpon>DataSetLollaPalooza.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\principal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sala_de_cine.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Documentos\Script_BaseDeDatos.sql" />
+    <Content Include="SqlServerTypes\readme.htm" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
